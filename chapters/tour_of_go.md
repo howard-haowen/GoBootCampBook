@@ -261,6 +261,7 @@ Type: complex128 Value: (2+3i)`
 ### Type conversion
 
 - The expression T(v) converts the value v to the type T.
+- Go assignment between items of different type requires an explicit conversion. 
 
 Some numeric conversions:
 
@@ -269,6 +270,7 @@ var i int = 42
 var f float64 = float64(i)
 var u uint = uint(f)
 ```
+
 Or, put more simply:
 
 ```go
@@ -276,17 +278,14 @@ i := 42
 f := float64(i)
 u := uint(f)
 ```
-Go assignment between items of different type requires an explicit conversion. 
-
-* [Type conversion example](https://tour.golang.org/basics/13)
 
 
 ### Constants
 
-Constants are declared like variables, but with the `const` keyword.
-Constants can be character, string, boolean, or numeric values.
-Constants cannot be declared using the `:=` syntax.
-An untyped constant takes the type needed by its context.
+- Constants are declared like variables, but with the `const` keyword.
+- Constants can be character, string, boolean, or numeric values.
+- **Constants cannot be declared using the `:=` syntax.**
+- An untyped constant takes the type needed by its context.
 
 ```go
 const Pi = 3.14
@@ -301,14 +300,15 @@ const (
 )
 ```
 
-* [Constants example](https://tour.golang.org/basics/15)
-* [Numeric Constants](https://tour.golang.org/basics/16)
 
 ### For Loop
 
-Go has only one looping construct, the for loop.
-The basic for loop looks as it does in C or Java, except that the ( ) are gone (they are not even optional) and the { } are required.
-As in C or Java, you can leave the pre and post statements empty.
+- **Go has only one looping construct, the `for` loop**.
+- The basic for loop looks as it does in C or Java, except that the ( ) are gone (they are not even optional) and the { } are required.
+- There are three components in a `for` loop, all seperated by semicolons:
+	-   the **init statement**: executed before the first iteration
+	-   the **condition expression**: evaluated before every iteration
+	-   the **post statement**: executed at the end of every iteration
 
 ```go
 sum := 0
@@ -317,12 +317,16 @@ for i := 0; i < 10; i++ {
 }
 ```
 
+- As in C or Java, **you can leave the pre and post statements empty**.
+
 ```go
 sum := 1
 for ; sum < 1000; {
     sum += sum
 }
 ```
+
+Or simply 
 
 ```go
 sum := 1
@@ -331,24 +335,20 @@ for sum < 1000 {
 }
 ```
 
+- Without the init and post statement, a `for` loop in Go functions just like a `while` loop in Python. 
+- To create an infinite loop, `for` and a pair of braces are all it takes. 
+
 ```go
 for {
   // do something in a loop forever  
 }
 ```
 
-* [For loop example](https://tour.golang.org/flowcontrol/1)
-* [For loop without pre/post statements](https://tour.golang.org/flowcontrol/2)
-* [For loop as a `while` loop](https://tour.golang.org/flowcontrol/3)
-* [Infinite loop](https://tour.golang.org/flowcontrol/4)
 
 ### If statement
 
-The `if` statement looks as it does in C or Java, except that the `( )`
-are gone and the `{ }` are required. Like `for`, the `if` statement can start with a short statement to execute before the condition.
-Variables declared by the statement are only in scope until the end of
-the `if`.
-Variables declared inside an if short statement are also available inside any of the else blocks.
+- The `if` statement looks as it does in C or Java, except that the `( )` are gone and the `{ }` are required. 
+- Variables declared by the statement are only in scope until the end of the `if`.
 
 ```go
 if answer != 42 {
@@ -356,90 +356,45 @@ if answer != 42 {
 }
 ```
 
+- Like `for`, **the `if` statement can start with a short statement to execute before the condition**.
+
 ```go
 if err := foo(); err != nil {
     panic(err)
 }
 ```
 
-* [`If` statement](https://tour.golang.org/flowcontrol/5)
-* [`If` with a short statement](https://tour.golang.org/flowcontrol/6)
-* [`If` and `else` example](https://tour.golang.org/flowcontrol/7)
+- Variables declared inside an `if` short statement are also available inside any of the `else` blocks.
 
 
-###Exercises
-
-[Loops and Functions exercise](https://tour.golang.org/flowcontrol/8)
-
-**Solutions**:
-
-Repeat that calculation 10 times and see how close you get to the answer for various values:
+### Switch statement
+- A `switch` statement is a shorter way to write a sequence of `if - else` statements. It runs the first case whose value is equal to the condition expression.
 
 ```go
 package main
 
 import (
-	"fmt"
-	"math"
+ "fmt"
+ "runtime"
 )
 
-func Sqrt(x float64) float64 {
-	// nested function to generate an approximation
-	approximation := func(z, x float64) float64 {
-		return z - ((z*z)-x)/(2*z)
-	}
-
-	z := 1.0
-	for i := 0; i < 10; i++ {
-		z = approximation(z, x)
-	}
-	return z
-}
-
 func main() {
-	for i := 1.0; i < 11.0; i++ {
-		fmt.Printf("%d: %f vs %f\n", int(i), Sqrt(i), math.Sqrt(i))
-	}
+ fmt.Print("Go runs on ")
+ switch os := runtime.GOOS; os {
+ 
+ case "darwin":
+ fmt.Println("OS X.")
+
+ case "linux":
+ fmt.Println("Linux.")
+
+ default:
+ // freebsd, openbsd,
+ // plan9, windows...
+ fmt.Printf("%s.\n", os)
+ }
 }
 ```
-[Go Playground](http://play.golang.org/p/me3tBkzd5S)
-
-Stop once the value has stopped changing (or only changes by a very small delta). See if that's more or fewer iterations.
-
-
-```go
-package main
-
-import (
-	"fmt"
-	"math"
-)
-
-func Sqrt(x float64) (float64, int) {
-	approximation := func(z, x float64) float64 {
-		return z - ((z*z)-x)/(2*z)
-	}
-	i := 0
-	z := approximation(1.0, x)
-	for math.Abs(approximation(z, x)-z) > 0.0000001 {
-		z = approximation(z, x)
-		i++
-	}
-	return z, i
-}
-
-func main() {
-	for i := 1.0; i < 11.0; i++ {
-		ours, iterations := Sqrt(i)
-		fmt.Printf("%d: in %d iterations %f vs %f\n",
-			int(i),
-			iterations, ours,
-			math.Sqrt(i))
-	}
-}
-```
-[Go Playground](http://play.golang.org/p/VBvPwQmDLI)
-
 
 ### Structs
 
@@ -460,10 +415,6 @@ func main() {
 *Exercise*
 
 ### First class functions, closures
-
-*Exercise*
-
-### Switch statement
 
 *Exercise*
 

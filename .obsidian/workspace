@@ -7,8 +7,11 @@
         "id": "20410d5266f5324a",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "chapters/tour_of_go.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -74,7 +77,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "chapters/tour_of_go.md"
+              }
             }
           },
           {
@@ -83,6 +88,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "chapters/tour_of_go.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -101,6 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "chapters/tour_of_go.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,15 +138,15 @@
   },
   "active": "20410d5266f5324a",
   "lastOpenFiles": [
-    "Go Bootcamp Book TOC.md",
     "chapters/tour_of_go.md",
+    "README.md",
+    "Go Bootcamp Book TOC.md",
     "chapters/preface.md",
     "TODO.md",
     "chapters/01_intro.md",
     "chapters/web_apis.md",
     "chapters/useful_tools.md",
     "chapters/refactoring_with_tests.md",
-    "chapters/best_practices.md",
-    "chapters/deployments.md"
+    "chapters/best_practices.md"
   ]
 }
