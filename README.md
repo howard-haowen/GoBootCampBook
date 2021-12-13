@@ -1,6 +1,6 @@
 # Go Bootcamp Book TOC
 
-This is forked from [GoBootcamp/book](https://github.com/GoBootcamp/book).
+This is forked from [GoBootcamp/book](https://github.com/GoBootcamp/book). Some notes are added here and there, and the whole repo is meant to be read with [Obsidian](https://obsidian.md/).
 
 [[preface]]
 [[tour_of_go]]
@@ -17,4 +17,4 @@ This is forked from [GoBootcamp/book](https://github.com/GoBootcamp/book).
 [[11_tricks_and_tips]]
 [[12_exercises]]
 
- > Web version of [the book](http://www.golangbootcamp.com/book/frontmatter)
+> Web version of [the book](http://www.golangbootcamp.com/book/frontmatter)

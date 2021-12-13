@@ -7,11 +7,8 @@
         "id": "20410d5266f5324a",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Go Bootcamp Book TOC.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -77,9 +74,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Go Bootcamp Book TOC.md"
-              }
+              "state": {}
             }
           },
           {
@@ -88,7 +83,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Go Bootcamp Book TOC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -107,7 +101,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Go Bootcamp Book TOC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
