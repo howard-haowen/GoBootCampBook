@@ -1,0 +1,20 @@
+# Go Bootcamp Book TOC
+
+This is forked from [GoBootcamp/book](https://github.com/GoBootcamp/book).
+
+[[preface]]
+[[tour_of_go]]
+[[01_intro]]
+[[02_basics]]
+[[03_types]]
+[[04_collection_types]]
+[[05_control_flow]]
+[[06_methods]]
+[[07_interfaces]]
+[[08_concurrency]]
+[[09_get_setup]]
+[[10_get_your_feet_wet]]
+[[11_tricks_and_tips]]
+[[12_exercises]]
+
+ > Web version of [the book](http://www.golangbootcamp.com/book/frontmatter)

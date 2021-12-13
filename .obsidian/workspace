@@ -1,0 +1,152 @@
+{
+  "main": {
+    "id": "5d3d3b0fad86fee2",
+    "type": "split",
+    "children": [
+      {
+        "id": "20410d5266f5324a",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Go Bootcamp Book TOC.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c7cb694eb13e94d1",
+    "type": "split",
+    "children": [
+      {
+        "id": "7ad973c65616277a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6cf68ad5c5c104f1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "46a70fc476851d20",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "65a22310591fcc85",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "ed2d06efe394244a",
+    "type": "split",
+    "children": [
+      {
+        "id": "7f4b7f81dbd028b8",
+        "type": "tabs",
+        "dimension": 66.93440428380187,
+        "children": [
+          {
+            "id": "1a1607b2e5825a0a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Go Bootcamp Book TOC.md"
+              }
+            }
+          },
+          {
+            "id": "3b067961d6ac9a90",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Go Bootcamp Book TOC.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "79f68041e72a886a",
+        "type": "tabs",
+        "dimension": 33.065595716198125,
+        "children": [
+          {
+            "id": "7cf0fc4eccbd8298",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Go Bootcamp Book TOC.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e6d62449cecc0292",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "20410d5266f5324a",
+  "lastOpenFiles": [
+    "Go Bootcamp Book TOC.md",
+    "chapters/tour_of_go.md",
+    "chapters/preface.md",
+    "TODO.md",
+    "chapters/01_intro.md",
+    "chapters/web_apis.md",
+    "chapters/useful_tools.md",
+    "chapters/refactoring_with_tests.md",
+    "chapters/best_practices.md",
+    "chapters/deployments.md"
+  ]
+}
