@@ -1,4 +1,5 @@
-#Tour of Go 
+# Tour of Go
+
 \label{cha:tour_of_go}
 
 Go is often referred as a "simple" programming language, **a language that can be
@@ -10,18 +11,22 @@ in just a few pages.
 Here are the concepts we are going to explore before writing our
 first application. To walk through these various concepts, we are
 going to use Go's official [Tour of Go](https://tour.golang.org/) web
-application. 
+application.
 
-## Basic Concepts
+## Basics [[02_basics]]
+
 \label{sec:basic_concepts}
 
-### Packages
+### Packages, variables, and functions
+
+#### [[package]]
 
 - Every Go program is made up of packages.
 - Programs start running in package main.
 - By convention, **the package name is the same as the last element of the import path**. For instance, the "math/rand" package comprises files that begin with the statement package rand.
 
 [Package example](https://tour.golang.org/basics/1)
+
 ```go
 package main
 
@@ -37,9 +42,10 @@ func main() {
 
 > The imported package `math/rand` is referred to simply as `rand`.
 
-### Imports
+#### [[import]]
 
-* [Imports example](https://tour.golang.org/basics/2)
+- [Imports example](https://tour.golang.org/basics/2)
+
 ```go
 package main
 
@@ -55,13 +61,14 @@ func main() {
 
 > This code groups the imports into a parenthesized, **factored import statement**.
 
-### Exported names
+#### Exported names
 
 - After importing a package, you can refer to the names it exports.
 - In Go, **a name is exported if it begins with a capital letter**.
-	- `Foo` is an exported name, as is `FOO`. The name `foo` is not exported.
 
-* [Exported names example](https://tour.golang.org/basics/3)
+    - `Foo` is an exported name, as is `FOO`. The name `foo` is not exported.
+
+- [Exported names example](https://tour.golang.org/basics/3)
 
 ```go
 package main
@@ -78,15 +85,14 @@ func main() {
 
 > While `math.pi` will create an error, `math.Pi` will not.
 
-### Functions, signature, return values, named results
+#### Functions, signature, return values, named results
 
-A function can take zero or more typed arguments.
-**The type comes after the variable name**. 
-Functions can be defined to return any number of values. 
-**Return values are always typed**.
+- A function can take zero or more typed arguments.
+- **The type comes after the variable name**.
+- Functions can be defined to return any number of values.
+- **Return values are always typed**.
 
-
-* [Function example](https://tour.golang.org/basics/4)
+- [Function example](https://tour.golang.org/basics/4)
 
 ```go
 package main
@@ -102,10 +108,10 @@ func main() {
 }
 ```
 
-> a function that takes two arguments 
+> a function that takes two arguments
 > The two arguments `x int, y int` can be shortened to `x, y int`
 
-* [Function with multiple results](https://tour.golang.org/basics/6)
+- [Function with multiple results](https://tour.golang.org/basics/6)
 
 ```go
 package main
@@ -124,7 +130,7 @@ func main() {
 
 > a function that returns two values
 
-* [Function with named results](https://tour.golang.org/basics/7)
+- [Function with named results](https://tour.golang.org/basics/7)
 
 ```go
 package main
@@ -134,30 +140,30 @@ import "fmt"
 func split(sum int) (x, y int) {
 	x = sum * 4 / 9
 	y = sum - x
-	return 
+	return
 }
 
 func main() {
 	fmt.Println(split(17))
 ```
 
-> A return statement without arguments returns the named return values (i.e.  `x `and `y` in this case). This is known as a **naked return**.
+> A return statement without arguments returns the named return values (i.e. `x `and `y` in this case). This is known as a **naked return**.
 
-#### Resources
+##### Resources
 
-* [Go's declaration
-Syntax](http://blog.golang.org/gos-declaration-syntax)
+- [Go's declaration
+    Syntax](http://blog.golang.org/gos-declaration-syntax)
 
-### Variables / inferred typing, short assignment
+#### Variables
 
-- The `var` statement declares a list of variables; as in function argument lists, the type is last.
+- The [[var]] statement declares a list of variables; as in function argument lists, the type is last.
 - A var declaration can include **initializers**, one per variable.
 - If an initializer is present, the type can be omitted; the variable will take the type of the initializer.
 - Inside a function, the `:=` short assignment statement can be used in place of a var declaration with implicit type.
-- Outside a function, every construct begins with a keyword (`var`,
-- `func`, and so on) and the `:=` construct is not available.
+- Outside a function, every construct begins with a keyword ([[var]],
+- [[func]], and so on) and the `:=` construct is not available.
 
-* [Variables example](https://tour.golang.org/basics/8)
+- [Variables example](https://tour.golang.org/basics/8)
 
 ```go
 package main
@@ -172,10 +178,10 @@ func main() {
 }
 ```
 
->  Output: `0 false false false`
->  Initializers of the `bool` and `int` type are `false` and `0` respectively. 
+> Output: `0 false false false`
+> Initializers of the `bool` and `int` type are `false` and `0` respectively.
 
-* [Initialization of variables](https://tour.golang.org/basics/9)
+- [Initialization of variables](https://tour.golang.org/basics/9)
 
 ```go
 package main
@@ -190,10 +196,10 @@ func main() {
 }
 ```
 
-> For `i` and `j`, the type is explicitly specified. 
-> For `c`, `python`, and `java`, the type is inferred.  
+> For `i` and `j`, the type is explicitly specified.
+> For `c`, `python`, and `java`, the type is inferred.
 
-* [Short variable declaration: `:=`](https://tour.golang.org/basics/10)
+- [Short variable declaration: `:=`](https://tour.golang.org/basics/10)
 
 ```go
 package main
@@ -209,9 +215,9 @@ func main() {
 }
 ```
 
-> `{ArgName} := {ArgValue}`is a shorthand for  `var {ArgName} {ArgType} = {ArgValue}`.
+> `{ArgName} := {ArgValue}`is a shorthand for `var {ArgName} {ArgType} = {ArgValue}`.
 
-### Basic types
+#### Basic types [[03_types]]
 
 ```go
 bool
@@ -231,7 +237,7 @@ float32 float64
 complex64 complex128
 ```
 
-* [Basic types example](https://tour.golang.org/basics/11)
+- [Basic types example](https://tour.golang.org/basics/11)
 
 ```go
 package main
@@ -254,14 +260,12 @@ func main() {
 }
 ```
 
-> Output: `Type: bool Value: false
-Type: uint64 Value: 18446744073709551615
-Type: complex128 Value: (2+3i)`
+> Output: `Type: bool Value: false Type: uint64 Value: 18446744073709551615 Type: complex128 Value: (2+3i)`
 
-### Type conversion
+#### Type conversion
 
-- The expression T(v) converts the value v to the type T.
-- Go assignment between items of different type requires an explicit conversion. 
+- The expression `T(v)` converts the value v to the type T.
+- Go assignment between items of different type requires an explicit conversion.
 
 Some numeric conversions:
 
@@ -279,10 +283,9 @@ f := float64(i)
 u := uint(f)
 ```
 
+#### Constants
 
-### Constants
-
-- Constants are declared like variables, but with the `const` keyword.
+- Constants are declared like variables, but with the [[const]] keyword.
 - Constants can be character, string, boolean, or numeric values.
 - **Constants cannot be declared using the `:=` syntax.**
 - An untyped constant takes the type needed by its context.
@@ -300,15 +303,16 @@ const (
 )
 ```
 
+### Flow control statements: [[for]], [[if]], [[switch]], and [[defer]]
 
-### For Loop
+#### [[for]] Loop [[05_control_flow]]
 
-- **Go has only one looping construct, the `for` loop**.
+- **Go has only one looping construct, the [[for]] loop**.
 - The basic for loop looks as it does in C or Java, except that the ( ) are gone (they are not even optional) and the { } are required.
-- There are three components in a `for` loop, all seperated by semicolons:
-	-   the **init statement**: executed before the first iteration
-	-   the **condition expression**: evaluated before every iteration
-	-   the **post statement**: executed at the end of every iteration
+- There are three components in a [[for]] loop, all seperated by semicolons:
+    - the **init statement**: executed before the first iteration
+    - the **condition expression**: evaluated before every iteration
+    - the **post statement**: executed at the end of every iteration
 
 ```go
 sum := 0
@@ -326,7 +330,7 @@ for ; sum < 1000; {
 }
 ```
 
-Or simply 
+Or simply
 
 ```go
 sum := 1
@@ -335,20 +339,19 @@ for sum < 1000 {
 }
 ```
 
-- Without the init and post statement, a `for` loop in Go functions just like a `while` loop in Python. 
-- To create an infinite loop, `for` and a pair of braces are all it takes. 
+- Without the init and post statement, a [[for]] loop in Go functions just like a `while` loop in Python.
+- To create an infinite loop, [[for]] and a pair of braces are all it takes.
 
 ```go
 for {
-  // do something in a loop forever  
+  // do something in a loop forever
 }
 ```
 
+#### [[if]] statement
 
-### If statement
-
-- The `if` statement looks as it does in C or Java, except that the `( )` are gone and the `{ }` are required. 
-- Variables declared by the statement are only in scope until the end of the `if`.
+- The [[if]] statement looks as it does in C or Java, except that the `( )` are gone and the `{ }` are required.
+- Variables declared by the statement are only in scope until the end of the [[if]].
 
 ```go
 if answer != 42 {
@@ -356,7 +359,7 @@ if answer != 42 {
 }
 ```
 
-- Like `for`, **the `if` statement can start with a short statement to execute before the condition**.
+- Like [[for]], **the [[if]] statement can start with a short statement to execute before the condition**.
 
 ```go
 if err := foo(); err != nil {
@@ -364,11 +367,15 @@ if err := foo(); err != nil {
 }
 ```
 
-- Variables declared inside an `if` short statement are also available inside any of the `else` blocks.
+- Variables declared inside an [[if]] short statement are also available inside any of the [[else]] blocks.
 
+#### [[switch]] statement
 
-### Switch statement
-- A `switch` statement is a shorter way to write a sequence of `if - else` statements. It runs the first case whose value is equal to the condition expression.
+- A [[switch]] statement is a shorter way to write a sequence of `if - else` statements. It runs the first case whose value is equal to the condition expression.
+- Keywords:
+    - [[switch]]: starts a switch block
+    - [[case]]: specifies a condition and an action to be executed when the condition is true, like `if` and `elif` in Python
+    - [[default]]: specifies the default condition and an action to be executed when the condition is true, like `else` in Python
 
 ```go
 package main
@@ -381,7 +388,7 @@ import (
 func main() {
  fmt.Print("Go runs on ")
  switch os := runtime.GOOS; os {
- 
+
  case "darwin":
  fmt.Println("OS X.")
 
@@ -396,73 +403,113 @@ func main() {
 }
 ```
 
-### Structs
+##### [[switch]] evaluation order
 
-### Pointers
+- [[switch]] cases evaluate cases from top to bottom, stopping when a case succeeds.
 
-### Initializing
+```go
+package main
 
-### Arrays
+import (
+	"fmt"
+	"time"
+)
 
-### Slices
+func main() {
+	fmt.Println("When's Saturday?")
+	today := time.Now().Weekday()
+	switch time.Saturday {
+	case today + 0:
+		fmt.Println("Today.")
+	case today + 1:
+		fmt.Println("Tomorrow.")
+	case today + 2:
+		fmt.Println("In two days.")
+	default:
+		fmt.Println("Too far away.")
+	}
+}
+```
 
-### Range
+> The output when run on a day that's more than 3 days before Saturday:
+> `> When's Saturday? Too far away.`
 
-*Exercise*
+#### [[defer]] statement
 
-### Maps
+- A defer statement defers the execution of a function until the surrounding function returns.
 
-*Exercise*
+```go
+package main
 
-### First class functions, closures
+import "fmt"
 
-*Exercise*
+func main() {
+	defer fmt.Println("world")
 
+	fmt.Println("hello")
+}
+```
 
-## Methods and interfaces
+> The output is `hello word` rather than `world hello` because of the [[defer]] statement.
+
+##### stacking [[defer]]
+
+- Deferred function calls are pushed onto a stack. When a function returns, its deferred calls are executed in last-in-first-out order.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("counting")
+
+	for i := 0; i < 10; i++ {
+		defer fmt.Println(i)
+	}
+
+	fmt.Println("done")
+}
+```
+
+> The whole [[for]] loop is deferred, resulting `9~0` (in reverse order, due to [[LIFO]]) to be printed after `counting` and `done`.
+
+### More types: structs, slices, and maps
+
+#### Pointers
+
+#### Arrays
+
+#### Slices
+
+#### Maps
+
+#### Structs
+
+#### Initializing
+
+#### Range
+
+#### First class functions, closures
+
+## Methods and interfaces [[06_methods]]
+
 \label{sec:methods_and_interfaces}
 
 ### Methods
 
 ### Interfaces
 
+### Stringers
+
 ### Errors
 
-*Exercise*
+### Images
 
-## Concurrency
+## Concurrency [[08_concurrency]]
 
 ### Goroutines
 
 ### Channels
 
 ### Select
-
-*Exercise*
-
-
-<!---
-
-This is a section. You can refer to it using the \LaTeX\ cross-reference syntax, like so: Section~\ref{sec:a_section}.
-
-
-```ruby
-def hello
-  puts "hello, world!"
-end
-```
-
-The last of these can be combined with \PolyTeX's `codelisting` environment to make code listings with linked cross-references (Listing~\ref{code:hello}).
-
-\begin{codelisting}
-\codecaption{Hello, world.}
-\label{code:hello}
-```ruby
-def hello
-  puts "hello, world!"
-end
-```
-\end{codelisting}
-
-
---->

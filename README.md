@@ -1,6 +1,6 @@
 # Go Bootcamp Book TOC
 
-This is forked from [GoBootcamp/book](https://github.com/GoBootcamp/book). Some notes are added here and there, and the whole repo is meant to be read with [Obsidian](https://obsidian.md/).
+This is forked from [GoBootcamp/book](https://github.com/GoBootcamp/book). Some notes are added here and there, and the whole repo is meant to be read using [Obsidian](https://obsidian.md/), a note-taking system that will blow your mind.
 
 [[preface]]
 [[tour_of_go]]

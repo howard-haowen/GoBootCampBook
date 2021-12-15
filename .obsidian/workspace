@@ -133,20 +133,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "active": "20410d5266f5324a",
   "lastOpenFiles": [
     "chapters/tour_of_go.md",
     "README.md",
-    "Go Bootcamp Book TOC.md",
     "chapters/preface.md",
+    "chapters/03_types.md",
+    "Go Bootcamp Book TOC.md",
     "TODO.md",
     "chapters/01_intro.md",
     "chapters/web_apis.md",
     "chapters/useful_tools.md",
-    "chapters/refactoring_with_tests.md",
-    "chapters/best_practices.md"
+    "chapters/refactoring_with_tests.md"
   ]
 }
