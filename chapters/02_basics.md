@@ -1,19 +1,19 @@
 #The Basics
 \label{cha:basics}
 
-Go is often referred to as a "simple" programming language, a language that can be
-learned in a few hours if you already know another language.
-Go was designed to feel familiar and to stay as simple as possible,
-[the entire language specification](http://golang.org/ref/spec) fits
-in just a few pages.
-
-There are a few concepts we are going to explore before writing our
-first application.
+- Go is often referred to as a "simple" programming language, a language that can be
+- learned in a few hours if you already know another language.
+- Go was designed to feel familiar and to stay as simple as possible,
+- [the entire language specification](http://golang.org/ref/spec) fits
+- in just a few pages.
+- There are a few concepts we are going to explore before writing our
+    first application.
 
 ## Variables & inferred typing
+
 \label{sec:variables}
 
-The var statement declares a list of variables with the type declared last.
+- The var statement declares a list of variables with the type declared last.
 
 ```go
 var (
@@ -32,8 +32,7 @@ var (
 )
 ```
 
-
-Variables can also be declared one by one:
+- Variables can also be declared one by one:
 
 ```go
 var name     string
@@ -41,7 +40,7 @@ var age      int
 var location string
 ```
 
-A var declaration can include initializers, one per variable.
+- A var declaration can include initializers, one per variable.
 
 ```go
 var (
@@ -51,7 +50,7 @@ var (
 )
 ```
 
-If an initializer is present, the type can be omitted, the variable will take the type of the initializer (inferred typing).
+- **If an initializer is present, the type can be omitted**, the variable will take the type of the initializer (inferred typing).
 
 ```go
 var (
@@ -61,7 +60,7 @@ var (
 )
 ```
 
-You can also initialize variables on the same line:
+- You can also initialize variables on the same line:
 
 ```go
 var (
@@ -69,7 +68,7 @@ var (
 )
 ```
 
-Inside a function, the `:=`  short assignment statement can be used in place of a var declaration with implicit type.
+- Inside a function, **the `:=` short assignment statement** can be used in place of a var declaration with implicit type.
 
 ```go
 func main() {
@@ -79,9 +78,7 @@ func main() {
 }
 ```
 
-[See in Playground](http://play.golang.org/p/TenQy6FMQS)
-
-A variable can contain any type, including functions:
+- A variable can contain any type, including functions:
 
 ```go
 func main() {
@@ -92,37 +89,17 @@ func main() {
 }
 ```
 
-[See in Playground](http://play.golang.org/p/S0Gq-tSESX)
-
-Outside a function, every construct begins with a keyword (`var`,
-`func`, and so on) and the `:=` construct is not available.
-
-
-* [Go's declaration
-Syntax](http://blog.golang.org/gos-declaration-syntax)
-
+- **Outside a function**, every construct begins with a keyword (`var`, `func`, and so on) and **the `:=` construct is not available**.
+    - [Go's declaration
+        Syntax](http://blog.golang.org/gos-declaration-syntax)
 
 ## Constants
+
 \label{sec:constants}
 
-Constants are declared like variables, but with the `const` keyword.
-
-Constants can only be character, string, boolean, or numeric values
-and cannot be declared using the `:=` syntax.
-An untyped constant takes the type needed by its context.
-
-```go
-const Pi = 3.14
-const (
-        StatusOK                   = 200
-        StatusCreated              = 201
-        StatusAccepted             = 202
-        StatusNonAuthoritativeInfo = 203
-        StatusNoContent            = 204
-        StatusResetContent         = 205
-        StatusPartialContent       = 206
-)
-```
+- Constants are declared like variables, but with the `const` keyword.
+- **Constants** can only be character, string, boolean, or numeric values and **cannot be declared using the `:=` syntax**.
+- An untyped constant takes the type needed by its context.
 
 ```go
 package main
@@ -144,14 +121,9 @@ func main() {
 }
 ```
 
-[See in Playground](http://play.golang.org/p/fPlqsffS-J)
-
-
 ## Printing Constants and Variables
 
-While you can print the value of a variable or constant using the built-in
-`print` and `println` functions, the more idiomatic and flexible way is to use the
-[`fmt` package](http://golang.org/pkg/fmt/)
+- While you can print the value of a variable or constant using the built-in `print` and `println` functions, the more idiomatic and flexible way is to use the [[fmt package]] [external link](http://golang.org/pkg/fmt/).
 
 ```go
 func main() {
@@ -160,9 +132,8 @@ func main() {
 }
 ```
 
-`fmt.Println` prints the passed in variables' values and appends a newline.
-`fmt.Printf` is used when you want to print one or multiple values
-using a defined format specifier.
+- `fmt.Println` prints the passed in variables' values and **appends a newline**.
+- `fmt.Printf` is used when you want to print one or multiple values using a **defined format specifier**.
 
 ```go
 func main() {
@@ -173,12 +144,14 @@ func main() {
 }
 ```
 
-[See in Playground](http://play.golang.org/p/sTZgAH7TWn)
+> Like older versions of Python, Go uses the `%` operator to format strings.
+> The Python way:`print("Dr. %s, that'll be %.2f." % ("Jiang", 9.487))`
+> The Go way: `fmt.Printf("Dr. %s, that'll be %.2f.", "Jiang", 9.487)`
 
-Read the [`fmt` package documentation](http://golang.org/pkg/fmt/#hdr-Printing) to see the available flags to create a format specifier.
-
+- Read the [`fmt` package documentation](http://golang.org/pkg/fmt/#hdr-Printing) to see the available flags to create a format specifier.
 
 ## Packages and imports
+
 \label{sec:packages}
 
 Every Go program is made up of packages.
@@ -214,9 +187,8 @@ import (
 )
 ```
 
-* [Go Tour: Packages](https://tour.golang.org/basics/1)
-* [Go Tour: Imports](https://tour.golang.org/basics/2)
-
+- [Go Tour: Packages](https://tour.golang.org/basics/1)
+- [Go Tour: Imports](https://tour.golang.org/basics/2)
 
 Usually, non standard lib packages are namespaced using a web
 url. For instance, I ported to Go some Rails logic, including the cryptography code used in
@@ -230,13 +202,13 @@ import "github.com/mattetti/goRailsYourself/crypto"
 ```
 
 ## Code location
+
 \label{sec:code_location}
 
 The snippet above basically tells the compiler to import the crypto
 package available at the `github.com/mattetti/goRailsYourself/crypto`
 path. It doesn't mean that the compiler will automatically pull down the
 repository, so where does it find the code?
-
 
 You need to pull down the code yourself. The easiest way is to use the
 `go get` command provided by Go.
@@ -278,8 +250,8 @@ When starting a new program or library, it is recommended to do so
 inside the `src` folder, using a fully qualified path (for instance:
 `github.com/<your username>/<project name>`)
 
-
 ## Exported names
+
 \label{sec:exported_names}
 
 After importing a package, you can refer to the names it exports
@@ -312,26 +284,24 @@ func main() {
 `Pi` is exported and can be accessed from outside the package, while `pi`
 isn't available.
 
-
 ```
 cannot refer to unexported name math.pi
 ```
 
-* [See in Playground](http://play.golang.org/p/Fsanbxo-A2)
+- [See in Playground](http://play.golang.org/p/Fsanbxo-A2)
 
 Use the provided Go [documentation](http://golang.org/pkg/) or
 [godoc.org](http://godoc.org/) to find exported names.
 
-* [Exported names example](http://play.golang.org/p/5y_evW6jiS)
-
+- [Exported names example](http://play.golang.org/p/5y_evW6jiS)
 
 ## Functions, signature, return values, named results
+
 \label{sec:functions}
 
 A function can take zero or more typed arguments.
 The type comes after the variable name.
 Functions can be defined to return any number of values that are always typed.
-
 
 ```go
 package main
@@ -347,11 +317,10 @@ func main() {
 }
 ```
 
-* [Go Tour Functions example](https://tour.golang.org/basics/4)
+- [Go Tour Functions example](https://tour.golang.org/basics/4)
 
 In the following example, instead of declaring the type of each parameter,
 we only declare one type that applies to both.
-
 
 ```go
 package main
@@ -367,8 +336,7 @@ func main() {
 }
 ```
 
-
-* [See in Playground](http://play.golang.org/p/AqCI22fz91)
+- [See in Playground](http://play.golang.org/p/AqCI22fz91)
 
 In the following example, the `location` function returns two string values.
 
@@ -394,13 +362,11 @@ func main() {
 }
 ```
 
-
-* [See in playground](http://play.golang.org/p/e265ckMmSC)
+- [See in playground](http://play.golang.org/p/e265ckMmSC)
 
 Functions take parameters. In Go, functions can return multiple "result parameters", not just a single value. They can be named and act just like variables.
 
 If the result parameters are named, a return statement without arguments returns the current values of the results.
-
 
 ```go
 func location(city string) (region, continent string) {
@@ -421,14 +387,14 @@ func main() {
 }
 ```
 
-* [See in Playground](http://play.golang.org/p/aX92mw7USF)
+- [See in Playground](http://play.golang.org/p/aX92mw7USF)
 
 I personally recommend against using named return parameters because
 they often cause more confusion than they save time or help clarify your
 code.
 
-
 ## Pointers
+
 \label{sec:pointers}
 
 Go has pointers, but no pointer arithmetic.
@@ -452,8 +418,8 @@ client := &http.Client{}
 resp, err := client.Get("http://gobootcamp.com")
 ```
 
-
 ## Mutability
+
 \label{sec:mutability}
 
 In Go, only constants are immutable. However because arguments are

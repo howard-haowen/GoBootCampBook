@@ -41,13 +41,13 @@ consider [joining the Go Bootcamp Mailing List](http://groups.google.com/d/forum
 After the event, we expect the attendees to leave with the
 following knowledge, skills and attributes.
 
-###Knowledge
+### Knowledge
 * pros/cons of static typing in Go
 * what makes Go unique
 * what is Go particularly good at
 * what are the challenging parts of Go
 
-###Skills
+### Skills
 * know how to do data modeling with Go
 * know how to organize code in packages
 * know how to test code
@@ -58,7 +58,8 @@ following knowledge, skills and attributes.
 * know how to cross compile
 * know how to use the key go tools
 
-###Attitudes
+### Attitudes
 * value the potential of the Go language
 * can argue when to use Go vs using "legacy language"
 * consider using Go for a future project
+

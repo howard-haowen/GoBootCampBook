@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "20410d5266f5324a",
+        "id": "bdf71c0ed9124d17",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "chapters/tour_of_go.md",
+            "file": "chapters/02_basics.md",
             "mode": "source"
           }
         }
@@ -78,19 +78,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "chapters/tour_of_go.md"
-              }
-            }
-          },
-          {
-            "id": "3b067961d6ac9a90",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "chapters/tour_of_go.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "file": "chapters/02_basics.md"
               }
             }
           }
@@ -107,14 +95,14 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "chapters/tour_of_go.md",
+                "file": "chapters/02_basics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -135,17 +123,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "20410d5266f5324a",
+  "active": "bdf71c0ed9124d17",
   "lastOpenFiles": [
-    "chapters/tour_of_go.md",
+    "chapters/02_basics.md",
     "README.md",
+    "packages/fmt package.md",
+    "chapters/01_intro.md",
+    "chapters/tour_of_go.md",
     "chapters/preface.md",
     "chapters/03_types.md",
     "Go Bootcamp Book TOC.md",
     "TODO.md",
-    "chapters/01_intro.md",
-    "chapters/web_apis.md",
-    "chapters/useful_tools.md",
-    "chapters/refactoring_with_tests.md"
+    "chapters/web_apis.md"
   ]
 }
